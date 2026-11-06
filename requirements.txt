@@ -1,29 +1,18 @@
 # Web Application Framework
-streamlit
+starlette
+uvicorn
+jinja2
+python-multipart
+markdown-it-py
 
-# Deep Learning & Vision (Plant Disease)
-torch
-torchvision
+# Image Processing (Disease Detection)
 Pillow
 
-# Tabular Machine Learning (Crop Prediction)
-scikit-learn
-joblib
-numpy
-pandas
+# AI & Speech Services (AgriBot & Diagnostic Protocols)
+google-genai
+gTTS
 
-# API Integrations & Utilities
-openai
+# Network & Utilities
 requests
 python-dotenv
-
-gTTs
-plotly
-pydeck
-
-chromadb 
-google-generativeai 
-PyPDF2
-ddgs
 deep-translator
-

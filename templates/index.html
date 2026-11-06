@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart System 🌱</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Top Navigation Bar -->
+        <header class="nav-container">
+            <div class="nav-logo-group" id="nav-logo">
+                <span class="nav-icon">🌱</span>
+                <span class="nav-logo" data-i18n="AgriSmart System">AgriSmart System</span>
+                <span class="nav-tagline" data-i18n="Crop Disease Diagnostic Panel">Crop Disease Diagnostic Panel</span>
+            </div>
+            <div class="lang-selector-group">
+                <select id="lang-select" aria-label="Select Language">
+                    {% for lang in languages %}
+                    <option value="{{ lang }}" {% if lang == "English" %}selected{% endif %}>{{ lang }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </header>
+
+        <!-- VIEW 1: HOME DASHBOARD -->
+        <main id="view-home" class="view-panel active">
+            <div class="dashboard-header">
+                <h2 class="section-title" data-i18n="Select a System Module:">Select a System Module:</h2>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Primary Tool: Disease Detection -->
+                <div class="card-wrapper">
+                    <div class="dashboard-card primary">
+                        <div>
+                            <span class="card-badge primary">PRIMARY DIAGNOSTIC TOOL</span>
+                            <div class="card-title primary">🔬 <span data-i18n="Crop Disease Detection">Crop Disease Detection</span></div>
+                            <div class="card-desc primary" data-i18n="Scan leaf surface photographs to detect crop infections, diagnose pathogens, and get specialized treatment protocols.">
+                                Scan leaf surface photographs to detect crop infections, diagnose pathogens, and get specialized treatment protocols.
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li class="spec-item"><span class="spec-bullet">1</span> Botanical pathogen and infection analysis</li>
+                            <li class="spec-item"><span class="spec-bullet">2</span> Targeted organic and chemical treatment plans</li>
+                            <li class="spec-item"><span class="spec-bullet">3</span> Immediate diagnosis from leaf photographs</li>
+                        </ul>
+                    </div>
+                    <button class="btn-card primary" id="btn-launch-disease" data-i18n="Launch Disease Scanner">
+                        Launch Disease Scanner
+                    </button>
+                </div>
+
+                <!-- Secondary Tool: AgriBot Assistant -->
+                <div class="card-wrapper">
+                    <div class="dashboard-card secondary">
+                        <div>
+                            <span class="card-badge secondary">ADVISORY SUPPORT</span>
+                            <div class="card-title secondary">🤖 <span data-i18n="AgriBot Assistant">AgriBot Assistant</span></div>
+                            <div class="card-desc secondary" data-i18n="Multi-lingual agronomy AI advisory assistant with voice and text support for personalized farming guidance.">
+                                Multi-lingual agronomy AI advisory assistant with voice and text support for personalized farming guidance.
+                            </div>
+                        </div>
+                        <ul class="spec-list">
+                            <li class="spec-item"><span class="spec-bullet">1</span> Irrigation & fertilization advisory</li>
+                            <li class="spec-item"><span class="spec-bullet">2</span> Voice and native language support</li>
+                        </ul>
+                    </div>
+                    <button class="btn-card secondary" id="btn-launch-bot" data-i18n="Open Assistant Chatbot">
+                        Open Assistant Chatbot
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Overview & Technology Summary -->
+            <section class="project-summary-section">
+                <div class="summary-card">
+                    <div class="summary-content">
+                        <span class="summary-badge" data-i18n="PROJECT OVERVIEW">PROJECT OVERVIEW</span>
+                        <h3 class="summary-title" data-i18n="Empowering Precision Agriculture with Artificial Intelligence">
+                            Empowering Precision Agriculture with Artificial Intelligence
+                        </h3>
+                        <p class="summary-desc" data-i18n="AgriSmart System is an intelligent agronomic platform built to bridge the gap between advanced agricultural science and grassroots farming. By combining computer vision with multilingual generative AI, AgriSmart equips farmers with immediate, actionable guidance to protect crop yields and maximize productivity.">
+                            AgriSmart System is an intelligent agronomic platform built to bridge the gap between advanced agricultural science and grassroots farming. By combining computer vision with multilingual generative AI, AgriSmart equips farmers with immediate, actionable guidance to protect crop yields and maximize productivity.
+                        </p>
+                        <div class="summary-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🔬</div>
+                                <div class="highlight-info">
+                                    <h4 data-i18n="Pathogen Identification">Pathogen Identification</h4>
+                                    <p data-i18n="Instant diagnosis of leaf fungal, bacterial, and pest infections with customized curative protocols.">
+                                        Instant diagnosis of leaf fungal, bacterial, and pest infections with customized curative protocols.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🎙️</div>
+                                <div class="highlight-info">
+                                    <h4 data-i18n="Voice & Text Advisory">Voice & Text Advisory</h4>
+                                    <p data-i18n="Speak or type in your native tongue for customized irrigation, fertilizer dosage, and soil health management.">
+                                        Speak or type in your native tongue for customized irrigation, fertilizer dosage, and soil health management.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🌐</div>
+                                <div class="highlight-info">
+                                    <h4 data-i18n="22 Official Languages">22 Official Languages</h4>
+                                    <p data-i18n="Fully inclusive architecture supporting all scheduled Indian regional languages for universal accessibility.">
+                                        Fully inclusive architecture supporting all scheduled Indian regional languages for universal accessibility.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-media">
+                        <img src="/static/images/agrismart_overview.jpg" alt="AgriSmart Precision Agriculture Overview" class="summary-img">
+                        <div class="summary-img-caption">
+                            <span class="pulse-indicator"></span>
+                            <span data-i18n="Intelligent Leaf Scanning & Agronomy Intelligence Engine">Intelligent Leaf Scanning & Agronomy Intelligence Engine</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- VIEW 2: CROP DISEASE DETECTION -->
+        <section id="view-disease" class="view-panel">
+            <div class="back-btn-wrapper">
+                <button class="btn-back" data-i18n="⬅ Return to Dashboard">⬅ Return to Dashboard</button>
+            </div>
+
+            <div class="view-header">
+                <h1 class="view-title">🍂 <span data-i18n="Crop Disease Diagnostic Panel">Crop Disease Diagnostic Panel</span></h1>
+                <p class="view-subtitle" data-i18n="Upload a clear leaf photograph to diagnose crop disease and generate specialized organic and chemical treatment protocols.">
+                    Upload a clear leaf photograph to diagnose crop disease and generate specialized organic and chemical treatment protocols.
+                </p>
+            </div>
+
+            <!-- Drag & Drop Upload Zone -->
+            <div class="upload-zone" id="upload-dropzone">
+                <div class="upload-icon">📷</div>
+                <div class="upload-text" data-i18n="Upload leaf photograph (JPG, PNG, JPEG)...">
+                    Upload leaf photograph (JPG, PNG, JPEG)...
+                </div>
+                <div class="upload-subtext">Drag and drop leaf specimen here, or click to browse</div>
+                <input type="file" id="leaf-file-input" accept="image/jpeg,image/png,image/jpg" style="display: none;">
+            </div>
+
+            <!-- Preview & Action Container -->
+            <div class="preview-container" id="preview-container">
+                <img id="preview-img" class="preview-img" alt="Leaf Specimen Preview">
+                <button class="btn-primary" id="btn-run-diagnosis">
+                    <span id="diagnosis-spinner" class="spinner" style="display: none;"></span>
+                    <span id="diagnosis-btn-text" data-i18n="Run Disease Diagnosis Engine">Run Disease Diagnosis Engine</span>
+                </button>
+            </div>
+
+            <!-- Results Output -->
+            <div id="result-container" style="display: none;">
+                <div id="result-status" class="result-card"></div>
+                <div id="result-disease-name" class="disease-callout" style="display: none;"></div>
+                <div id="treatment-report" class="treatment-report" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- VIEW 3: AGRIBOT ASSISTANT -->
+        <section id="view-chatbot" class="view-panel">
+            <div class="back-btn-wrapper">
+                <button class="btn-back" data-i18n="⬅ Return to Dashboard">⬅ Return to Dashboard</button>
+            </div>
+
+            <div class="view-header">
+                <h1 class="view-title">🤖 <span data-i18n="AgriBot Conversational Assistant">AgriBot Conversational Assistant</span></h1>
+                <p class="view-subtitle" data-i18n="Ask questions about irrigation, specialized treatments, fertilizer dosing, or active local farming practices by typing or speaking.">
+                    Ask questions about irrigation, specialized treatments, fertilizer dosing, or active local farming practices by typing or speaking.
+                </p>
+            </div>
+
+            <!-- Chat Window -->
+            <div class="chat-container">
+                <div class="chat-history" id="chat-history"></div>
+
+                <div class="chat-input-bar">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Enter your agriculture question here..." data-i18n-placeholder="Enter your agriculture question here...">
+                    <button id="btn-send-message" class="btn-send">Send</button>
+                </div>
+            </div>
+
+            <!-- Voice Controls Panel -->
+            <div class="voice-tools-panel">
+                <div class="voice-status-group">
+                    <button id="btn-record-voice" class="btn-record">🎙️ Start Voice Input</button>
+                    <span id="voice-status">Click to speak or upload audio</span>
+                </div>
+                <div>
+                    <label for="voice-file-input" style="font-size: 13px; color: var(--text-secondary); cursor: pointer; text-decoration: underline;">
+                        Upload audio file
+                    </label>
+                    <input type="file" id="voice-file-input" accept="audio/*" style="display: none;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Footer -->
+        <footer class="footer-container">
+            © 2026 <span data-i18n="AgriSmart Systems | Engineered for Precision Agriculture">AgriSmart Systems | Engineered for Precision Agriculture</span>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
+
